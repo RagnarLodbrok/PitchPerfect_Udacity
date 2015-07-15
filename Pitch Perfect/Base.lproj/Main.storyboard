@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iNX-Jo-QGI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iNX-Jo-QGI">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -35,7 +36,7 @@
                                     <action selector="stopAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="zrf-pV-m3P"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recording..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gV-t7-p4S">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Record" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gV-t7-p4S">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="14"/>
                                 <color key="textColor" red="0.14509803921568626" green="0.28235294117647058" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
@@ -185,17 +186,17 @@
                                 <exclude reference="zqt-w1-kG5"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="eaC-5q-4Ob"/>
-                                <exclude reference="xnL-Sz-gG1"/>
+                                <exclude reference="ppf-nS-i7h"/>
+                                <exclude reference="H9Z-PZ-80B"/>
+                                <exclude reference="rNf-GV-huw"/>
                                 <exclude reference="cve-oJ-PK9"/>
                                 <exclude reference="imr-z7-8w3"/>
+                                <exclude reference="eaC-5q-4Ob"/>
+                                <exclude reference="xnL-Sz-gG1"/>
                                 <exclude reference="ToT-Q5-vDx"/>
                                 <exclude reference="ooD-ob-704"/>
                                 <exclude reference="CxG-Yc-JdL"/>
                                 <exclude reference="RNU-3x-KPt"/>
-                                <exclude reference="H9Z-PZ-80B"/>
-                                <exclude reference="rNf-GV-huw"/>
-                                <exclude reference="ppf-nS-i7h"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -207,17 +208,17 @@
                                 <include reference="zqt-w1-kG5"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="eaC-5q-4Ob"/>
-                                <include reference="xnL-Sz-gG1"/>
+                                <include reference="ppf-nS-i7h"/>
+                                <include reference="H9Z-PZ-80B"/>
+                                <include reference="rNf-GV-huw"/>
                                 <include reference="cve-oJ-PK9"/>
                                 <include reference="imr-z7-8w3"/>
+                                <include reference="eaC-5q-4Ob"/>
+                                <include reference="xnL-Sz-gG1"/>
                                 <include reference="ToT-Q5-vDx"/>
                                 <include reference="ooD-ob-704"/>
                                 <include reference="CxG-Yc-JdL"/>
                                 <include reference="RNU-3x-KPt"/>
-                                <include reference="H9Z-PZ-80B"/>
-                                <include reference="rNf-GV-huw"/>
-                                <include reference="ppf-nS-i7h"/>
                             </mask>
                         </variation>
                     </view>

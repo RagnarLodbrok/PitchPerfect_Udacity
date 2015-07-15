@@ -25,7 +25,6 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
     
     override func viewWillAppear(animated: Bool) {
         micButton.hidden = false
-        recordingLabel.hidden = true
         stopButton.hidden = true
     }
 
@@ -38,6 +37,7 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
         micButton.hidden = true
         recordingLabel.hidden = false
         stopButton.hidden = false
+        recordingLabel.text = "Recording in Progress..."
         
         //Inside func recordAudio(sender: UIButton)
         let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
@@ -61,9 +61,7 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
 
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
         if (flag){
-            recorderAudio = RecordedAudio()
-            recorderAudio.filePathUrl = recorder.url
-            recorderAudio.title = recorder.url.lastPathComponent
+            recorderAudio = RecordedAudio(filePathUrl: recorder.url, title: recorder.url.lastPathComponent!)
             self.performSegueWithIdentifier("stopRecording", sender: recorderAudio)
     
         }else{

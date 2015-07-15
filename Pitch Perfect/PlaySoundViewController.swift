@@ -36,11 +36,15 @@ class PlaySoundViewController: UIViewController {
     }
 
     @IBAction func slowSound(sender: UIButton) {
+        audioEngine.stop()
+        audioEngine.reset()
         playAudioWithVariableSpeed(0.75)
     }
     
     
     @IBAction func fastSound(sender: UIButton) {
+        audioEngine.stop()
+        audioEngine.reset()
         playAudioWithVariableSpeed(1.5)
     }
     
@@ -86,15 +90,4 @@ class PlaySoundViewController: UIViewController {
         audioPlayer.currentTime = 0
         audioPlayer.stop()
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
