@@ -18,11 +18,6 @@ class PlaySoundViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        if var filePath = NSBundle.mainBundle().pathForResource("movie_quote", ofType: "mp3") {
-//            var filePathURL = NSURL.fileURLWithPath(filePath)
-//        }else{
-//            println("Problem with the music file path.")
-//        }
         
         audioPlayer = AVAudioPlayer(contentsOfURL: receiveAudio.filePathUrl, error: nil)
         audioPlayer.enableRate = true
@@ -36,22 +31,19 @@ class PlaySoundViewController: UIViewController {
     }
 
     @IBAction func slowSound(sender: UIButton) {
-        audioEngine.stop()
-        audioEngine.reset()
+        stopAllAudio()
         playAudioWithVariableSpeed(0.75)
     }
     
     
     @IBAction func fastSound(sender: UIButton) {
-        audioEngine.stop()
-        audioEngine.reset()
+        stopAllAudio()
         playAudioWithVariableSpeed(1.5)
     }
     
     func playAudioWithVariableSpeed(speed: Float)
     {
         audioPlayer.stop()
-        audioPlayer.currentTime = 0
         audioPlayer.rate = speed
         audioPlayer.play()
     }
@@ -62,9 +54,7 @@ class PlaySoundViewController: UIViewController {
     }
     
     func playAudioWithVariablePitch(pitch: Float){
-        audioPlayer.stop()
-        audioEngine.stop()
-        audioEngine.reset()
+        stopAllAudio()
         
         var audioPlayerNode = AVAudioPlayerNode()
         audioEngine.attachNode(audioPlayerNode)
@@ -87,7 +77,14 @@ class PlaySoundViewController: UIViewController {
     }
     
     @IBAction func stopButton(sender: UIButton) {
+        stopAllAudio()
+    }
+    
+    func stopAllAudio() {
         audioPlayer.currentTime = 0
         audioPlayer.stop()
+        audioEngine.stop()
+        audioEngine.reset()
+        
     }
 }

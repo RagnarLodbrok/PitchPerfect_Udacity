@@ -26,6 +26,8 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
     override func viewWillAppear(animated: Bool) {
         micButton.hidden = false
         stopButton.hidden = true
+        recordingLabel.text = "Tap to Record"
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,10 +43,6 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
         
         //Inside func recordAudio(sender: UIButton)
         let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
-        
-        //let currentDateTime = NSDate()
-        //let formatter = NSDateFormatter()
-        //formatter.dateFormat = "ddMMyyyy-HHmmss"
         let recordingName = "PerfectPitch" + ".wav"
         let pathArray = [dirPath, recordingName]
         let filePath = NSURL.fileURLWithPathComponents(pathArray)
@@ -62,7 +60,7 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
         if (flag){
             recorderAudio = RecordedAudio(filePathUrl: recorder.url, title: recorder.url.lastPathComponent!)
-            self.performSegueWithIdentifier("stopRecording", sender: recorderAudio)
+            performSegueWithIdentifier("stopRecording", sender: recorderAudio)
     
         }else{
             println("Recording was unsuccesful")
